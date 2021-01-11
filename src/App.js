@@ -199,6 +199,8 @@ function App() {
 
       {/* <h1>Hello Alll....</h1>   */}
       <div className="app__posts">
+
+        <div className="app__postsLeft">
         {
           posts.map(({ id, post }) => (
             <Post
@@ -209,8 +211,24 @@ function App() {
             />
           ))
         }
-      </div>
+        </div>
 
+        <div className="app__postsRight">            
+          <InstagramEmbed
+            url='https://www.instagram.com/p/CJ6Kxr4HO1T/?utm_source=ig_web_copy_link'
+            // clientAccessToken='123|456'
+            maxWidth={320}
+            hideCaption={false}
+            containerTagName='div'
+            protocol=''
+            injectScript
+            onLoading={() => {}}
+            onSuccess={() => {}}
+            onAfterRender={() => {}}
+            onFailure={() => {}}
+          />
+        </div>
+      </div>
 
       {
         user?.displayName ?
