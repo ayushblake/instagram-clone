@@ -201,19 +201,21 @@ function App() {
       <div className="app__posts">
 
         <div className="app__postsLeft">
-        {
-          posts.map(({ id, post }) => (
-            <Post
-              key={id}
-              username={post.username}
-              caption={post.caption}
-              imageUrl={post.imageUrl}
-            />
-          ))
-        }
+          {
+            posts.map(({ id, post }) => (
+              <Post
+                key={id}
+                postId={Id}
+                user={user}
+                username={post.username}
+                caption={post.caption}
+                imageUrl={post.imageUrl}
+              />
+            ))
+          }
         </div>
 
-        <div className="app__postsRight">            
+        <div className="app__postsRight">
           <InstagramEmbed
             url='https://www.instagram.com/p/CJ6Kxr4HO1T/?utm_source=ig_web_copy_link'
             // clientAccessToken='123|456'
@@ -222,10 +224,10 @@ function App() {
             containerTagName='div'
             protocol=''
             injectScript
-            onLoading={() => {}}
-            onSuccess={() => {}}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
+            onLoading={() => { }}
+            onSuccess={() => { }}
+            onAfterRender={() => { }}
+            onFailure={() => { }}
           />
         </div>
       </div>
